@@ -2,51 +2,71 @@
 	import { page } from '$app/state';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import Fa from 'svelte-fa'
+	import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+	import { slide } from 'svelte/transition';
+
+	let sidebar = $state();
+
+	function toggleSidebar() {
+		sidebar = !sidebar;
+	}
 </script>
 
-<header>
-	<div class="corner">
-		<a href="https://svelte.dev/docs/kit">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+<header class="sticky top-0 bg-[#f3e9dd]">
+	<div class="m-4">
+		<button class="text-2xl" onclick={toggleSidebar}>
+			<Fa icon={faBars} size="lg"  />
+		</button>
 	</div>
 
-	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
-			</li>
-			<li aria-current={page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
-			</li>
-		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
+	<div class="m-4">
+		<a href="https://www.facebook.com/traditonshausseeblick/" target="_blank" class="text-[#a1886e] text-lg">🔗 Facebook</a>
 	</div>
 </header>
+
+{#if sidebar}
+	<aside
+		class="absolute top-0 left-0 w-64 h-screen bg-[#fffdf9] p-6 shadow-md z-40 transition-transform duration-300"
+		transition:slide={{duration: 300, axis: "x"}}
+	>
+		<div class="flex justify-between items-center m-4">
+			<h2 class="text-2xl font-semibold text-[#a1886e]">Seeblick</h2>
+			<button class="text-xl" onclick={toggleSidebar}>
+				<Fa icon={faXmark} size="lg"  />
+			</button>
+		</div>
+
+
+		<div class="m-4">
+				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap " href="./">🏠
+				Start
+				</a>
+				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
+					 href="./Speisekarte">
+					🍽️ Speisekarte
+				</a>
+				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap" href="./Restaurant">
+					🏡 Restaurant
+				</a>
+				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
+					 href="./Übernachtung">
+					🛏️ Übernachtung
+				</a>
+				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap " href="./Kontakt">
+					📍 Kontakt
+				</a>
+				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap" href="./Impressum">
+					📝 Impressum
+				</a>
+		</div>
+	</aside>
+{/if}
 
 <style>
 	header {
 		display: flex;
 		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
 	}
 
 	.corner a {

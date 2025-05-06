@@ -5,10 +5,27 @@
 	let { children } = $props();
 </script>
 
-<div class="app">
+
+<div class="flex flex-col min-h-screen">
+	<div class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+		<Header />
+	</div>
+
+	<main class="flex flex-col flex-1 p-4 w-full max-w-4xl mx-auto box-border overflow-y-auto">
+		{@render children()}
+	</main>
+
+	<footer class="flex flex-col justify-center items-center p-3 sm:py-3 sm:px-0">
+		<p>
+			visit <a href="https://svelte.dev/docs/kit" class="font-bold">svelte.dev/docs/kit</a> to learn about SvelteKit
+		</p>
+	</footer>
+</div>
+<!--
+<div class="app flex-col h-screen overflow-hidden">
 	<Header />
 
-	<main>
+	<main class="overflow-y-scroll">
 		{@render children()}
 	</main>
 
@@ -18,6 +35,7 @@
 		</p>
 	</footer>
 </div>
+
 
 <style>
 	.app {
@@ -55,3 +73,4 @@
 		}
 	}
 </style>
+-->
