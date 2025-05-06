@@ -1,3 +1,7 @@
+<script>
+	import {phone, email} from '$lib/data/contact.js';
+</script>
+
 <div class="flex min-h-screen  text-[#333] font-sans overflow-x-hidden">
 	<!-- Content -->
 	<main class="flex-1 mt-0  p-8">
@@ -14,8 +18,8 @@
 				<p><strong>Vertreten durch:</strong> Silke Menzel</p>
 				<p><strong>Adresse:</strong> Promenande 1, 23999 Insel Poel</p>
 				<p><strong>Kontakt:</strong></p>
-				<p>Telefon: 038425 42549</p>
-				<p>E-Mail: hallo@traditionshaus-seeblick.de</p>
+				<p>Telefon: <a href="tel:{phone}">{phone}</a></p>
+				<p>E-Mail: <a href="mailto:{email}">{email}</a></p>
 			</section>
 
 			<section>

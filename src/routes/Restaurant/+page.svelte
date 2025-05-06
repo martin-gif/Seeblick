@@ -1,3 +1,7 @@
+<script>
+	import {phone} from '$lib/data/contact.js';
+</script>
+
 <div class="flex">
 	<main class="flex-grow w-full p-8 ml-0 transition-all duration-300 ease-in-out ">
 		<div class="bg-[#f6eee5] rounded-lg text-center p-6">
@@ -29,7 +33,7 @@
 
 			<div class="bg-[#fdf5ec] p-6 rounded-xl shadow hover:-translate-y-1 transition duration-200">
 				<strong>🗓️ Jetzt einen Tisch reservieren</strong>
-				<p class="mt-2">Tel: 038425 42549</p>
+				<p class="mt-2">Tel: <a href="tel:{phone}">{phone}</a></p>
 			</div>
 		</div>
 	</main>

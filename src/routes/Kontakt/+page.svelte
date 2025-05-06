@@ -1,3 +1,7 @@
+<script>
+	import {phone, email} from '$lib/data/contact.js';
+</script>
+
 <div class="flex flex-col   text-[#333] font-sans">
 		<main class="flex-1 mt-0  p-8 animate-fadeIn">
 		<div class="bg-[#f6eee5] rounded-lg p-8 text-center mb-8 animate-fadeIn">
@@ -11,8 +15,8 @@
 				Promenande 1<br />
 				23999 Insel Poel (OT Schwarzer Busch)
 			</p>
-			<p class="mb-4"><strong>📞 Telefon:</strong><br />038425 42549</p>
-			<p class="mb-4"><strong>📧 E-Mail:</strong><br />hallo@traditionshaus-seeblick.de</p>
+			<p class="mb-4"><strong>📞 Telefon:</strong><br /><a href="tel:{phone}">{phone}</a></p>
+			<p class="mb-4"><strong>📧 E-Mail:</strong><br /><a href="mailto:{email}">{email}</a></p>
 			<p><strong>🕒 Öffnungszeiten:</strong><br />
 				Täglich 11:00 – 20:00 Uhr<br />
 				Mittwochs Ruhetag
