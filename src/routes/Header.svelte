@@ -4,6 +4,7 @@
 	import github from '$lib/images/github.svg';
 	import Fa from 'svelte-fa'
 	import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+	import { faSquareFacebook} from '@fortawesome/free-brands-svg-icons';
 	import { slide } from 'svelte/transition';
 
 	let sidebar = $state(false);
@@ -29,7 +30,7 @@
 		bind:this={container}
 	>
 		<button class="text-2xl" onclick={toggleSidebar}>
-			<Fa icon={faBars} size="lg"  />
+			<Fa icon={faBars} size="2x"  />
 		</button>
 		{#if sidebar}
 			<aside
@@ -85,7 +86,9 @@
 	</div>
 
 	<div class="m-4">
-		<a href="https://www.facebook.com/traditonshausseeblick/" target="_blank" class="text-[#a1886e] text-lg">🔗 Facebook</a>
+		<a href="https://www.facebook.com/traditonshausseeblick/" target="_blank" class="text-[#a1886e] text-lg">
+			<Fa icon={faSquareFacebook}  size="2x" primaryColor="#1877F2"/>
+		</a>
 	</div>
 </header>
 
