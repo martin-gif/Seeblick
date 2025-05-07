@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Counter from './Counter.svelte';
+	import {phone, email} from '$lib/data/contact.js';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcomeFallback from '$lib/images/svelte-welcome.png';
 </script>
@@ -24,8 +25,9 @@
 				<img src="https://www.insel-poel.de/bilder/restaurants/traditionshaus-seeblick-310.jpg" alt="Restaurant Bild" class="w-full my-4 rounded-md" />
 				<p>Täglich von 11:00 Uhr – 20:30 Uhr (Küchenschluss um 20:00 Uhr)</p>
 				<p>Mittwochs ist Ruhetag</p>
-				<p class="mt-2">Tel: 038425 42549</p>
-				<p>Email: hallo@traditionshaus-seeblick.de</p>
+				<p>Telefon: <a href="tel:{phone}">{phone}</a></p>
+				<p>E-Mail: <a href="mailto:{email}">{email}</a></p>
+
 			</div>
 
 			<div class="bg-[#fef6e4] p-6 rounded-lg shadow-md animate-fadeInUp">
