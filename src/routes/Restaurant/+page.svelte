@@ -9,7 +9,7 @@
 		</div>
 
 		<div class="mt-8 space-y-6">
-			<div class="bg-[#fdf5ec] p-6 rounded-xl shadow hover:-translate-y-1 transition duration-200">
+			<div class="bg-[#fdf5ec] p-6 rounded-xl shadow-md hover:-translate-y-1 transition-transform duration-200">
 				<strong>☀️ bild</strong>
 				<img src="text.jpg" alt="Außenbereich" class="rounded mt-2" />
 			</div>

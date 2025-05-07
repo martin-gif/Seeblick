@@ -6,18 +6,82 @@
 	import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 	import { slide } from 'svelte/transition';
 
-	let sidebar = $state();
+	let sidebar = $state(false);
 
 	function toggleSidebar() {
 		sidebar = !sidebar;
 	}
+
+	let container = $state();
+	function onWindowClick(e) {
+		console.log(e.target)
+		if (container.contains(e.target) === false) {
+			// sidebar = false;
+		}
+	}
 </script>
 
+<svelte:window onclick={onWindowClick} />
+
 <header class="sticky top-0 bg-[#f3e9dd]">
-	<div class="m-4">
+	<div
+		class="m-4"
+		bind:this={container}
+	>
 		<button class="text-2xl" onclick={toggleSidebar}>
 			<Fa icon={faBars} size="lg"  />
 		</button>
+		{#if sidebar}
+			<aside
+				class="absolute top-0 left-0 w-64 h-screen bg-[#fffdf9] p-6 shadow-md z-40 transition-transform duration-300"
+				transition:slide={{duration: 300, axis: "x"}}
+			>
+				<div class="flex justify-between items-center m-4">
+					<h2 class="text-2xl font-semibold text-[#a1886e]">Seeblick</h2>
+					<button class="text-xl" onclick={toggleSidebar}>
+						<Fa icon={faXmark} size="lg"  />
+					</button>
+				</div>
+
+
+				<div class="m-4">
+					<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
+						 href="./"
+						 onclick={toggleSidebar}
+					>
+						🏠 Start
+					</a>
+					<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
+						 href="./Speisekarte"
+						 onclick={toggleSidebar}
+					>
+						🍽️ Speisekarte
+					</a>
+					<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap" href="./Restaurant"
+						 onclick={toggleSidebar}
+					>
+						🏡 Restaurant
+					</a>
+					<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
+						 href="./Übernachtung"
+						 onclick={toggleSidebar}
+					>
+						🛏️ Übernachtung
+					</a>
+					<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap " href="./Kontakt"
+						 onclick={toggleSidebar}
+					>
+						📍 Kontakt
+					</a>
+					<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap" href="./Impressum"
+						 onclick={toggleSidebar}
+					>
+						📝 Impressum
+					</a>
+				</div>
+			</aside>
+		{/if}
+
 	</div>
 
 	<div class="m-4">
@@ -25,43 +89,6 @@
 	</div>
 </header>
 
-{#if sidebar}
-	<aside
-		class="absolute top-0 left-0 w-64 h-screen bg-[#fffdf9] p-6 shadow-md z-40 transition-transform duration-300"
-		transition:slide={{duration: 300, axis: "x"}}
-	>
-		<div class="flex justify-between items-center m-4">
-			<h2 class="text-2xl font-semibold text-[#a1886e]">Seeblick</h2>
-			<button class="text-xl" onclick={toggleSidebar}>
-				<Fa icon={faXmark} size="lg"  />
-			</button>
-		</div>
-
-
-		<div class="m-4">
-				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap " href="./">🏠
-				Start
-				</a>
-				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
-					 href="./Speisekarte">
-					🍽️ Speisekarte
-				</a>
-				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap" href="./Restaurant">
-					🏡 Restaurant
-				</a>
-				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap "
-					 href="./Übernachtung">
-					🛏️ Übernachtung
-				</a>
-				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap " href="./Kontakt">
-					📍 Kontakt
-				</a>
-				<a class="block px-4 py-2 rounded hover:bg-[#f3e9dd] whitespace-nowrap" href="./Impressum">
-					📝 Impressum
-				</a>
-		</div>
-	</aside>
-{/if}
 
 <style>
 	header {

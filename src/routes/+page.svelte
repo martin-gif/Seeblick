@@ -31,13 +31,13 @@
 			<div class="bg-[#fef6e4] p-6 rounded-lg shadow-md animate-fadeInUp">
 				<strong class="text-xl">🍽️ Restaurant</strong>
 				<p class="mt-2">Mit regionalen Speisen und diversen Fischspezialitäten bringen wir Ihnen die Ostsee etwas näher.</p>
-				<a href="https://wecker69.github.io/Seeblick/Speisekarte" class="inline-block mt-4 text-blue-600 underline">Zur Speisekarte</a>
+				<a href="./Speisekarte" class="inline-block mt-4 text-blue-600 underline">Zur Speisekarte</a>
 			</div>
 
 			<div class="bg-[#fef6e4] p-6 rounded-lg shadow-md animate-fadeInUp">
 				<strong class="text-xl">🛌 Übernachtung</strong>
 				<p class="mt-2">Wachen Sie mit Meeresrauschen auf – unsere charmanten Zimmer und Ferienwohnungen laden zum Träumen ein.</p>
-				<a href="https://wecker69.github.io/Seeblick/Übernachtung" class="inline-block mt-4 text-blue-600 underline">Mehr erfahren</a>
+				<a href="./Übernachtung" class="inline-block mt-4 text-blue-600 underline">Mehr erfahren</a>
 			</div>
 
 			<div class="bg-[#fef6e4] p-6 rounded-lg shadow-md animate-fadeInUp">
