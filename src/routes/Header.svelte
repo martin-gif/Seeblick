@@ -35,7 +35,7 @@
 		{#if sidebar}
 			<aside
 				class="absolute top-0 left-0 w-64 h-screen bg-[#fffdf9] p-6 shadow-md z-40 transition-transform duration-300"
-				transition:slide={{duration: 300, axis: "x"}}
+				transition:slide={{duration: 301, axis: "x"}}
 			>
 				<div class="flex justify-between items-center m-4">
 					<h2 class="text-2xl font-semibold text-[#a1886e]">Seeblick</h2>
